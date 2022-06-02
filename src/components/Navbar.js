@@ -1,11 +1,11 @@
-import { Flex, Link, Stack, Text,Button, Spacer, Box, VStack } from '@chakra-ui/react'
-import React, { useRef } from 'react'
-import { Box1 } from './Box1'
-import { useDisclosure } from '@chakra-ui/react'
+import { Flex, Link, Stack, Text,Button, Spacer,} from '@chakra-ui/react'
+
+
+
 export const Navbar = (props) => {  
 
-    const count = useRef(0)
-    const { isOpen, onOpen, onClose } = useDisclosure()
+
+
     const Handle=()=>{
         props.setOpacity(1)
     }
@@ -14,15 +14,23 @@ export const Navbar = (props) => {
     const Hand=()=>{
         props.setOpacity(0)
     }
-   
+    const Handlei=()=>{
+      props.setOpacity(1)
+      
+    }
+    const Handlei2=()=>{
+      props.setOpacity(0)
+
+    }
+  
 
   return (
 
-   <Stack pl="3" p="3" position="sticky" height="60px" bg="pink.50" boxShadow="0 0 0 rgba(0,0,0,0.6)">
+   <Stack pl="3" p="3" position="sticky" height="60px" bg="pink.50">
      <Flex align="center">
          <Text fontSize="20px" fontWeight="1000">Logo</Text>
          <Flex ml="40px">
-         <Button onClick={Handle} colorScheme='teal' variant='none'>
+         <Button onMouseEnter={Handlei} onMouseLeave={Handlei2} onClick={Handle} colorScheme='teal' variant='none'>
     inspiration
   </Button>
          <Button onClick={Hand} colorScheme='teal' variant='none'>
